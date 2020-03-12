@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 // Add css files
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,13 +18,28 @@ import 'bootstrap';
 function SimpleCounter(props){
     return(
         <div className="container">
-            <div className="one">0</div>
-            <div className="two">0</div>
-            <div className="three">0</div>
-            <div className="four">0</div>
+            <div className="one">{(Math.floor(counter/1000)%10)}</div>
+            <div className="two">{(Math.floor(counter/100)%10)}</div>
+            <div className="three">{(Math.floor(counter/10))%10}</div>
+            <div className="four">{Math.floor(counter%10)}</div>
         </div>
     )
 }
+
+/*SimpleCounter.propTypes = {
+    fourthdigit: PropTypes.number,
+    thriddigit: PropTypes.number,
+    seconddigit: PropTypes.number,
+    firstdigit: PropTypes.number
+};*/
+
+let counter = 0;
+setInterval(function(){
+    counter++;
+
+ReactDOM.render(<SimpleCounter counter/>, document.querySelector("#root"));
+
+}, 1000);
 
 /*class Home extends Component {
     constructor(props) {
@@ -49,4 +65,3 @@ increment = () => {
 }*/
  
 
-ReactDOM.render(<SimpleCounter />, document.querySelector("#root"));
