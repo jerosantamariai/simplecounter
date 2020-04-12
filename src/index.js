@@ -15,29 +15,31 @@ import 'jquery';
 import 'popper.js';
 import 'bootstrap';
 
-function SimpleCounter(props){
-    return(
+function SimpleCounter(props) {
+    return (
+        <>
         <div className="container">
-            <div className="one">{(Math.floor(counter/1000)%10)}</div>
-            <div className="two">{(Math.floor(counter/100)%10)}</div>
-            <div className="three">{(Math.floor(counter/10))%10}</div>
-            <div className="four">{Math.floor(counter%10)}</div>
+            <div className="one">{(Math.floor(counter / 1000) % 10)}</div>
+            <div className="two">{(Math.floor(counter / 100) % 10)}</div>
+            <div className="three">{(Math.floor(counter / 10)) % 10}</div>
+            <div className="four">{Math.floor(counter % 10)}</div>
         </div>
+        </>
     )
 }
 
-/*SimpleCounter.propTypes = {
+SimpleCounter.propTypes = {
     fourthdigit: PropTypes.number,
     thriddigit: PropTypes.number,
     seconddigit: PropTypes.number,
     firstdigit: PropTypes.number
-};*/
+};
 
 let counter = 0;
-setInterval(function(){
+setInterval(function () {
     counter++;
 
-ReactDOM.render(<SimpleCounter counter/>, document.querySelector("#root"));
+    ReactDOM.render(<SimpleCounter counter />, document.querySelector("#root"));
 
 }, 1000);
 
@@ -63,5 +65,5 @@ increment = () => {
         )
     }
 }*/
- 
+
 

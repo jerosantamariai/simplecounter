@@ -1,5 +1,5 @@
-.body {
-    background-color: #3f4455;
+body {
+    background-color: gray !important;
 }
 
 .container{
@@ -10,12 +10,12 @@
     text-align: center;
     font-size: 70px;
     border-radius: 50px;
-    margin-top: 20px;
+    margin-top: 270px;
 }
 
 .container div{
     display: inline-block;
-    margin: auto 80px;
+    margin: auto 70px;
     
 
 }
